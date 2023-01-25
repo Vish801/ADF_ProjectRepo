@@ -1,6 +1,29 @@
 {
 	"name": "ADF-Pipeline-Topgear",
 	"properties": {
+		"activities": [
+			{
+				"name": "GitToken",
+				"type": "WebActivity",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"url": "https://accounts.accesscontrol.windows.net/fef2a540-8f05-48d9-9f9a-e145c52cd16b/tokens/OAuth/2",
+					"method": "POST",
+					"headers": {
+						"Content-type": "application/x-www-form-urlencoded"
+					},
+					"body": "https://accounts.accesscontrol.windows.net/fef2a540-8f05-48d9-9f9a-e145c52cd16b/tokens/OAuth/2\n\ngrant_type=client_credentials&client_id=3913190d-b858-488d-92d4-df0b1e5efce2@fef2a540-8f05-48d9-9f9a-e145c52cd16b&client_secret=xID8Q~D2zPoh_Yr_s7h8TqBZQ7BvE3yBUUilDbwP&resource=00000003-0000-0ff1-ce00-000000000000/vishwajeet.sharepoint.com@fef2a540-8f05-48d9-9f9a-e145c52cd16b"
+				}
+			}
+		],
 		"annotations": []
 	}
 }
