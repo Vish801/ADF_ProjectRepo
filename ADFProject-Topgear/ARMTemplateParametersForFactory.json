@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ADFProject-Topgear"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"SharepointOnline_properties_typeProperties_url": {
+			"value": "https://vishwajeet.sharepoint.com/_api/web/GetFileByServerRelativeUrl('/TopGearProject/ADFProject/')/$value"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://vishadlsadf.dfs.core.windows.net/"
+		}
+	}
+}
