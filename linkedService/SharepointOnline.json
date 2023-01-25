@@ -1,0 +1,12 @@
+{
+	"name": "SharepointOnline",
+	"properties": {
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://vishwajeet.sharepoint.com/_api/web/GetFileByServerRelativeUrl('/TopGearProject/ADFProject/')/$value",
+			"enableServerCertificateValidation": false,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
