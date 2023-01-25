@@ -22,6 +22,62 @@
 					},
 					"body": "https://accounts.accesscontrol.windows.net/fef2a540-8f05-48d9-9f9a-e145c52cd16b/tokens/OAuth/2\n\ngrant_type=client_credentials&client_id=3913190d-b858-488d-92d4-df0b1e5efce2@fef2a540-8f05-48d9-9f9a-e145c52cd16b&client_secret=xID8Q~D2zPoh_Yr_s7h8TqBZQ7BvE3yBUUilDbwP&resource=00000003-0000-0ff1-ce00-000000000000/vishwajeet.sharepoint.com@fef2a540-8f05-48d9-9f9a-e145c52cd16b"
 				}
+			},
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [
+					{
+						"activity": "GitToken",
+						"dependencyConditions": [
+							"Completed"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "BinarySource",
+						"storeSettings": {
+							"type": "HttpReadSettings",
+							"requestMethod": "GET",
+							"additionalHeaders": {
+								"value": "@{concat('Authorization:Bearer ',activity('GitToken').output.access_token)}",
+								"type": "Expression"
+							},
+							"requestTimeout": ""
+						},
+						"formatSettings": {
+							"type": "BinaryReadSettings"
+						}
+					},
+					"sink": {
+						"type": "BinarySink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "Binary1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Binary2",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
