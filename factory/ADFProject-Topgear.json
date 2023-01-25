@@ -1,0 +1,9 @@
+{
+	"name": "ADFProject-Topgear",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "8390ecd7-9356-4bc7-a3c6-140df04cffce",
+		"tenantId": "fef2a540-8f05-48d9-9f9a-e145c52cd16b"
+	}
+}
